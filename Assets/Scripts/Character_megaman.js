@@ -9,6 +9,9 @@
 	private var jumpForce : float = 400f;
 	
 	@SerializeField
+	private var slideForce : float = 20;
+	
+	@SerializeField
 	private var whatIsGround : LayerMask;
 	
 	@SerializeField
@@ -21,6 +24,9 @@
 	private var ceilingRadius : float = .1f;			// Per koki atstuma nustato kur lubos
 
 	private var anim : Animator;						// Kintamasis nustatyti animacijai
+	
+	private var lastSpeed : float = 0;
+	private var sliding : boolean = false;
 	
 	function Awake() {
 		// uzbindina
@@ -44,18 +50,41 @@
 	}
 	
 	function Move(move : float, jump : boolean) {
+		sliding = false;
+		var currSpeed : float = Mathf.Abs(move) * maxSpeed;
 		if (grounded || airControl) {
 			anim.SetFloat("Speed", Mathf.Abs(move));
-			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
-			if(move > 0 && !facingRight) {
-				Flip();
-			} else if(move < 0 && facingRight) {
-				Flip();
+			
+			if (grounded) {
+				if (lastSpeed >= maxSpeed-1) {
+					//Debug.Log(lastSpeed);
+					if(move >= 0 && !facingRight) {
+						sliding = true;
+					} else if(move <= 0 && facingRight) {
+						sliding = true;
+					}
+					
+				}
+				
 			}
+			
+			if (grounded && sliding) {
+				rigidbody2D.AddForce(new Vector2(-slideForce, 47f));
+			} else {
+				rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+				if(move > 0 && !facingRight && !sliding) {
+					Flip();
+				} else if(move < 0 && facingRight && !sliding) {
+					Flip();
+				}
+			}	
 		}
+
+		
 		if (grounded && jump) {
             // Add a vertical force to the player.
             anim.SetBool("Ground", false);
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 		}
+		lastSpeed = currSpeed;
 	}
