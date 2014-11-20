@@ -26,7 +26,14 @@
 	private var anim : Animator;						// Kintamasis nustatyti animacijai
 	
 	private var lastSpeed : float = 0;
-	private var sliding : boolean = false;
+	private var slidingLeft : boolean = false;
+	private var slidingRight : boolean = false;
+	
+	public var slideSpeed: float = 20; // slide speed
+	 private var isSliding : boolean = false;
+	 private var slideForward : Vector3; // direction of slide
+	 private var slideTimer : float = 0.0;
+	 public var slideTimerMax : float = 2.5; // time while sliding
 	
 	function Awake() {
 		// uzbindina
@@ -49,32 +56,61 @@
 		transform.localScale = theScale;
 	}
 	
-	function Move(move : float, jump : boolean) {
-		sliding = false;
+	function Move(move : float, jump : boolean, slide : boolean) {
+		slidingRight = false;
+		slidingLeft = false;
 		var currSpeed : float = Mathf.Abs(move) * maxSpeed;
 		if (grounded || airControl) {
 			anim.SetFloat("Speed", Mathf.Abs(move));
 			
 			if (grounded) {
 				if (lastSpeed >= maxSpeed-1) {
-					//Debug.Log(lastSpeed);
 					if(move >= 0 && !facingRight) {
-						sliding = true;
+						//slidingLeft = true;
+						slidingRight = false;
 					} else if(move <= 0 && facingRight) {
-						sliding = true;
-					}
-					
+						//slidingRight = true;
+						slidingLeft = false;
+					}	
 				}
 				
 			}
 			
-			if (grounded && sliding) {
-				rigidbody2D.AddForce(new Vector2(-slideForce, 47f));
-			} else {
+			if (grounded) {
+				if ((slide && facingRight) || slidingRight) {
+					Debug.Log("right");
+					rigidbody2D.AddForce(new Vector2(slideForce, -10f));
+				} else  if ((slide && !facingRight) || slidingLeft) {
+					Debug.Log("left");
+					rigidbody2D.AddForce(new Vector2(-slideForce, -10f));
+				}
+				
+				/*
+				if (slide) {
+					slideTimer = 0.0; // start timer
+         			isSliding = true;
+         			slideForward = rigidbody2D.transform.forward;
+				}
+				if (isSliding)
+			     {
+			         move = slideSpeed; // speed is slide speed
+			         
+			         rigidbody2D.velocity = new Vector2(maxSpeed * move, rigidbody2D.velocity.y);
+			         
+			         slideTimer += Time.deltaTime;
+			         if (slideTimer > slideTimerMax)
+			         {
+			             isSliding = false;
+			         }
+			     }
+			     */   
+			}
+		
+			if(!isSliding) {
 				rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
-				if(move > 0 && !facingRight && !sliding) {
+				if(move > 0 && !facingRight && !slidingRight && !slidingLeft) {
 					Flip();
-				} else if(move < 0 && facingRight && !sliding) {
+				} else if(move < 0 && facingRight && !slidingRight && !slidingLeft) {
 					Flip();
 				}
 			}	
