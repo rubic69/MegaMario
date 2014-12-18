@@ -26,6 +26,10 @@ public class Player : MonoBehaviour {
 	public float slideTimerMax = 0.5f; // time while sliding
 
 	private bool jump = false;
+	
+	public PlayerStats playerStats = new PlayerStats();
+
+	private int fallBoundary = -2;
 
 	void Awake() {
 		// uzbindina
@@ -42,6 +46,10 @@ public class Player : MonoBehaviour {
 		}
 		// Read the inputs.
 		float h = Input.GetAxis("Horizontal");
+
+		if(Input.GetButton("Jump")) {
+			jump = true;
+		}
 		// Pass all parameters to the character control script.
 		Move( h, jump);
 		// Reset the jump input once it has been used.
@@ -55,8 +63,16 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButton("Jump")) {
-			jump = true;
+		if (transform.position.y <= fallBoundary) {
+			damagePlayer(999999);
+		}
+	}
+
+	void damagePlayer(int damage) {
+		playerStats.health -= damage;
+		if (playerStats.health <= 0) {
+			Destroy(this.gameObject);
+			Debug.Log("DEAD");
 		}
 	}
 
@@ -117,5 +133,10 @@ public class Player : MonoBehaviour {
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 		}
 		lastSpeed = currSpeed;
+	}
+
+	[System.Serializable]
+	public class PlayerStats {
+		public int health = 100;
 	}
 }
