@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
 	
 	public PlayerStats playerStats = new PlayerStats();
 
-	private int fallBoundary = -2;
+	public int fallBoundary = -20;
 
 	void Awake() {
 		// uzbindina

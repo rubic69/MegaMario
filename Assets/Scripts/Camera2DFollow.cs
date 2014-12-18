@@ -19,15 +19,21 @@ public class Camera2DFollow : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		lastTargetPosition = target.position;
-		offsetZ = (transform.position - target.position).z;
-		transform.parent = null;
+		if (target != null) {
+						Debug.Log ("not null");
+						lastTargetPosition = target.position;
+						offsetZ = (transform.position - target.position).z;
+						transform.parent = null;
+				} else {
+				Debug.Log ("null");
+				}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (target == null) {
+			Debug.Log ("null find");
 			findPlayer();
 			return;
 		}

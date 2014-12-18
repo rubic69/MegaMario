@@ -15,9 +15,13 @@ public class LoadMap : MonoBehaviour {
 	public GameObject [] Tiles = new GameObject[8];
 
 	public Transform player;
-	public Transform floor_valid;
+	public Transform groundBox;
+	public Transform startPoint;
+	public Transform checkPoint;
 	
-	public const char sfloor_valid = '0';
+	private const char groundBoxValue = '0';
+	private const char startPointValue = '1';
+	private const char checkPointValue = '2';
 
 	// Use this for initialization
 	void Start () {
@@ -47,8 +51,15 @@ public class LoadMap : MonoBehaviour {
 		for (int i = 0; i < map.Length; i++) {
 			for (int j = 0; j < map[i].Length; j++) {
 				switch (map[i][j]){	
-					case sfloor_valid:
-						Instantiate(floor_valid, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
+					case groundBoxValue:
+						Instantiate(groundBox, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
+						break;
+					case startPointValue:
+						Instantiate(startPoint, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
+						//Instantiate(player, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
+						break;
+					case checkPointValue:
+						Instantiate(checkPoint, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
 						break;
 				}
 			}
