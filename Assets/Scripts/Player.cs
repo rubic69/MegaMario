@@ -71,8 +71,7 @@ public class Player : MonoBehaviour {
 	void damagePlayer(int damage) {
 		playerStats.health -= damage;
 		if (playerStats.health <= 0) {
-			Destroy(this.gameObject);
-			Debug.Log("DEAD");
+			GameMaster.killPlayer(this);
 		}
 	}
 

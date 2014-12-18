@@ -14,6 +14,8 @@ public class Camera2DFollow : MonoBehaviour {
 	Vector3 lastTargetPosition;
 	Vector3 currentVelocity;
 	Vector3 lookAheadPos;
+
+	float nextTimeToSearch;
 	
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,7 @@ public class Camera2DFollow : MonoBehaviour {
 	void Update () {
 
 		if (target == null) {
+			findPlayer();
 			return;
 		}
 		
@@ -48,5 +51,15 @@ public class Camera2DFollow : MonoBehaviour {
 		transform.position = newPos;
 		
 		lastTargetPosition = target.position;		
+	}
+
+	void findPlayer() {
+		if (nextTimeToSearch <= Time.time) {
+			GameObject result = GameObject.FindGameObjectWithTag("Player");
+			if (result != null) {
+				target = result.transform;
+			}
+			nextTimeToSearch = Time.time + 0.05f;
+		}
 	}
 }
