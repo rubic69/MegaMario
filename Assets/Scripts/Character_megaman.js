@@ -64,9 +64,9 @@
 		
 		if (grounded || airControl) {
 			//disable run animation when sliding
-			if (!isSliding) {
-				anim.SetFloat("Speed", Mathf.Abs(move));
-			}
+			//if (!isSliding) {
+			//	anim.SetFloat("Speed", Mathf.Abs(move));
+			//}
 			
 			if (grounded && !isSliding) {
 				if (lastSpeed >= maxSpeed-1) {
