@@ -9,19 +9,20 @@ public class Destroy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		rigidbody2D.AddForce(new Vector2(50f, 200f));
 		Destroy (this.gameObject, destroyTime);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
-	void OnTriggerStay2D(Collider2D other)
-	{
-		if(other.tag!="shooter" && other.tag!="neutralized")
-		Destroy (this.gameObject);
-
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.gameObject.tag == "Player") {
+			Destroy (this.gameObject);
+			Player player = (Player) col.gameObject.GetComponent(typeof(Player));
+			player.increaseCoins();
+		}
 	}
 }

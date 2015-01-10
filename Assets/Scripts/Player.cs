@@ -134,8 +134,13 @@ public class Player : MonoBehaviour {
 		lastSpeed = currSpeed;
 	}
 
+	public void increaseCoins() {
+		playerStats.coins += 1;
+	}
+
 	[System.Serializable]
 	public class PlayerStats {
 		public int health = 100;
+		public int coins = 0;
 	}
 }
