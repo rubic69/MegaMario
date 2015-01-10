@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
+		//anim = GetComponent<Animator> ();
 	}
 
 
@@ -55,14 +55,17 @@ public class Enemy : MonoBehaviour {
 			if(height>0) {
 				Dies();
 				col.rigidbody.AddForce(new Vector2(0,300));	
-			}	
+			} else {
+				Player player = (Player) col.gameObject.GetComponent(typeof(Player));
+				GameMaster.killPlayer(player);
+			}
 		}
 	}
 
 	void Dies() {
-		anim.SetBool ("stomped", true);
+		//anim.SetBool ("stomped", true);
 		Destroy (this.gameObject, 0.5f);
-		gameObject.tag = "neutralized";	
+		//gameObject.tag = "neutralized";	
 	}
 
 	void Move() {
