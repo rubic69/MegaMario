@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 	Transform sightStart;
 	Transform sightEnd;
 	Transform weakness;
+	bool dead = false;
 	
 	bool colliding;
 	
@@ -50,9 +51,10 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag == "Player") {
+		if (!dead && col.gameObject.tag == "Player") {
 			float height= col.contacts[0].point.y - weakness.position.y;
 			if(height>0) {
+				dead = true;
 				Dies();
 				col.rigidbody.AddForce(new Vector2(0,300));	
 			} else {
@@ -64,7 +66,7 @@ public class Enemy : MonoBehaviour {
 
 	void Dies() {
 		//anim.SetBool ("stomped", true);
-		Destroy (this.gameObject, 0.5f);
+		Destroy (this.gameObject, 1f);
 		//gameObject.tag = "neutralized";	
 	}
 

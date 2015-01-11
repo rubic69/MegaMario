@@ -6,15 +6,20 @@ public class shooter : MonoBehaviour {
 	public GameObject projectile;
 	public float speedFactor;
 	public float delay;
-
-	// Use this for initialization
-	void Start () {
-		StartCoroutine (Shoots ());
+	Transform weakness;
+	
+	void Awake() {
+		weakness = transform.Find("weakness");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.gameObject.tag == "Player") {
+			float height= col.contacts[0].point.y - weakness.position.y;
+			if(height<0) {
+				GameObject clone = (GameObject)Instantiate(projectile, transform.position,Quaternion.identity);
+				Destroy(this.gameObject);
+			}
+		}
 	}
 
 
