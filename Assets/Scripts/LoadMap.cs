@@ -20,6 +20,7 @@ public class LoadMap : MonoBehaviour {
 	public Transform startPoint;
 	public Transform checkPoint;
 	public Transform coinBox;
+	public int level = 1;
 	
 	private const char groundBoxValue = '0';
 	private const char startPointValue = '1';
@@ -29,7 +30,7 @@ public class LoadMap : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		char[][] map = readFile(Application.dataPath + "/Maps/level1.txt");
+		char[][] map = readFile(Application.dataPath + "/Maps/level" + level + ".txt");
 		loadMap (map);
 	}
 	
