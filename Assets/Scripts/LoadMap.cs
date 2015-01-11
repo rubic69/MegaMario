@@ -16,6 +16,7 @@ public class LoadMap : MonoBehaviour {
 
 	public Transform player;
 	public Transform enemy;
+	public Transform turtleEnemy;
 	public Transform groundBox;
 	public Transform startPoint;
 	public Transform checkPoint;
@@ -27,6 +28,7 @@ public class LoadMap : MonoBehaviour {
 	private const char checkPointValue = '2';
 	private const char enemyValue = '3';
 	private const char coinBoxValue = '4';
+	private const char turtleEnemyValue = '5';
 
 	// Use this for initialization
 	void Start () {
@@ -71,6 +73,9 @@ public class LoadMap : MonoBehaviour {
 						break;
 					case coinBoxValue:
 						Instantiate(coinBox, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
+						break;
+					case turtleEnemyValue:
+						Instantiate(turtleEnemy, new Vector3(j-0.5f, -i-0.5f, 0), Quaternion.identity);
 						break;
 				}
 			}
