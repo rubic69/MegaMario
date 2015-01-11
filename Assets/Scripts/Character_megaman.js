@@ -22,6 +22,9 @@
 	private var grounded : boolean = false;				// Zaidejas ant zemes ar ne
 	private var ceilingCheck : Transform = null;				// Pozicija nustatanti kur zaidejas liecia lubas
 	private var ceilingRadius : float = .1f;			// Per koki atstuma nustato kur lubos
+	private var wallCheck : Transform = null;
+	private var wallRadius : float = .1f;
+	private var touchingWall : boolean = false;
 
 	private var anim : Animator;						// Kintamasis nustatyti animacijai
 	
@@ -39,10 +42,13 @@
 		// uzbindina
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
+		wallCheck = transform.Find("WallCheck");
 		anim = GetComponent(Animator);
 	}
 	function FixedUpdate() {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+		touchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, whatIsGround);
+		anim.SetBool("Wall", touchingWall);
 		anim.SetBool("Ground", grounded);
 		if (!isSliding) {
 			anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
