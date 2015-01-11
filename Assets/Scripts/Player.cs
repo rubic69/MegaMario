@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
 
 	public AudioClip[] audioClip;
 
+
+
 	void Awake() {
 		// uzbindina
 		groundCheck = transform.Find("GroundCheck");
@@ -43,6 +45,9 @@ public class Player : MonoBehaviour {
 	void FixedUpdate() {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
 		anim.SetBool("Ground", grounded);
+		if (grounded) {
+			anim.SetBool("Starting", false);
+		}
 		if (!isSliding) {
 			anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 		}

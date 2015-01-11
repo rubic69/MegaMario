@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour {
 	
 	public LayerMask detectWhat;
 
-	Animator anim = null;
+	Animator anim;
 
 
 	private bool facingRight = true;			// Nustatoma i kuria puse ziures
@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour {
 		sightStart = transform.Find("sightStart");
 		sightEnd = transform.Find("sightEnd");
 		weakness = transform.Find("weakness");
+		anim = GetComponent<Animator>();
 	}
 
 	void FixedUpdate() {
@@ -80,8 +81,9 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Dies() {
-		//anim.SetBool ("stomped", true);
-		Destroy (this.gameObject);
+		anim.SetBool ("Dead", true);
+		audio.Play ();
+		Destroy (this.gameObject, 0.4f);
 		//gameObject.tag = "neutralized";	
 	}
 

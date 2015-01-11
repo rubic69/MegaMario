@@ -12,6 +12,8 @@ public class Turtle : MonoBehaviour {
 	public LayerMask detectWhat;
 	bool colliding;
 
+	Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		velocity = Random.Range(-1.0f, 1.0f);
@@ -27,6 +29,7 @@ public class Turtle : MonoBehaviour {
 
 	void Awake() {
 		// uzbindina
+		anim = GetComponent<Animator>();
 		sightStart = transform.Find("sightStart");
 		sightEnd = transform.Find("sightEnd");
 		weakness = transform.Find("weakness");
@@ -67,8 +70,9 @@ public class Turtle : MonoBehaviour {
 	}
 	
 	void Dies() {
-		//anim.SetBool ("stomped", true);
-		Destroy (this.gameObject);
+		anim.SetBool ("Dead", true);
+		audio.Play ();
+		Destroy (this.gameObject, 0.4f);
 		//gameObject.tag = "neutralized";	
 	}
 	
