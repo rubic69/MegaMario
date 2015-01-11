@@ -1,0 +1,78 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 635M       (ID=0xde3)
+    Vendor:   NVIDIA
+    VRAM:     1994 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Projects\MariosBros\mario_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Projects\MariosBros\mario_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Projects\MariosBros\mario_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Projects\MariosBros\mario_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Projects\MariosBros\mario_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\Projects\MariosBros\mario_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: D:\Projects\MariosBros\mario_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Projects\MariosBros\mario_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.099 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found.
+<RI> Input initialized.
+Platform assembly: D:\Projects\MariosBros\mario_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Projects\MariosBros\mario_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 3.339257 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 349.
+Total: 0.681070 ms (FindLiveObjects: 0.011905 ms CreateObjectMapping: 0.008210 ms MarkObjects: 0.119464 ms  DeleteObjects: 0.111253 ms)
+
+Start
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+gm
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+IsolatedStorageException: Could not find a part of the path "D:\Projects\MariosBros\mario_Data\Maps\level1.txt".
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllText (System.String path) [0x00000] in <filename unknown>:0 
+  at LoadMap.readFile (System.String file) [0x00000] in <filename unknown>:0 
+  at LoadMap.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+DEAD 1 _GM (GameMaster)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawnPlayer
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Player found
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawned
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+DEAD 1 _GM (GameMaster)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawnPlayer
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawned
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+

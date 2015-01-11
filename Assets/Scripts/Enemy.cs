@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	public float velocity = 1f;
+	public float velocity = 1.0f;
 	Transform sightStart;
 	Transform sightEnd;
 	Transform weakness;
@@ -25,6 +25,14 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		velocity = Random.Range(-1.0f, 1.0f);
+		if (velocity <= 0) {
+			velocity = -1.0f;
+			transform.localScale = new Vector2 (transform.localScale.x * -1, transform.localScale.y);
+		} else {
+			velocity = 1.0f;
+		}
+
 		//anim = GetComponent<Animator> ();
 	}
 
@@ -57,10 +65,13 @@ public class Enemy : MonoBehaviour {
 			if(height>0) {
 				dead = true;
 				Dies();
-				col.rigidbody.AddForce(new Vector2(0,300));	
+				col.gameObject.rigidbody2D.AddForce(new Vector2(0,500));	
 			} else {
+				dead = true;
 				Player player = (Player) col.gameObject.GetComponent(typeof(Player));
-				GameMaster.killPlayer(player);
+				player.damagePlayer(40);
+				col.gameObject.rigidbody2D.AddForce(new Vector2(0,500));	
+				Dies();
 			}
 		}
 	}
@@ -70,33 +81,6 @@ public class Enemy : MonoBehaviour {
 		Destroy (this.gameObject);
 		//gameObject.tag = "neutralized";	
 	}
-
-	void Move() {
-		/*if (facingRight) {
-			rigidbody2D.velocity = new Vector2(speed, rigidbody2D.velocity.y);
-		} else {
-			rigidbody2D.velocity = new Vector2(-speed, rigidbody2D.velocity.y);
-		}
-
-		/*if(move > 0 && !facingRight) {
-			Flip();
-		} else if(move < 0 && facingRight) {
-			Flip();
-		}*/	
-	}
-
-	/*
-	*	Metodas skirtas apsukti personaza
-	*/
-	void Flip() {
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
-
-
-
 
 	// Update is called once per frame
 	void Update () {

@@ -64,11 +64,11 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.y <= fallBoundary) {
-			damagePlayer(999999);
+			damagePlayer(99999);
 		}
 	}
 
-	void damagePlayer(int damage) {
+	public void damagePlayer(int damage) {
 		playerStats.health -= damage;
 		if (playerStats.health <= 0) {
 			GameMaster.killPlayer(this);
@@ -136,6 +136,11 @@ public class Player : MonoBehaviour {
 
 	public void increaseCoins() {
 		playerStats.coins += 1;
+	}
+
+	void OnGUI() {
+		GUI.Box (new Rect(10,10,80,20), "Coins: " + playerStats.coins.ToString());
+		GUI.Box (new Rect(10,30,80,20), "Health: " + playerStats.health.ToString());
 	}
 
 	[System.Serializable]
