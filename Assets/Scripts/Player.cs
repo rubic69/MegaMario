@@ -65,6 +65,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 		if (transform.position.y <= fallBoundary) {
 			damagePlayer(99999);
+			Application.LoadLevel(0);
 		}
 	}
 
