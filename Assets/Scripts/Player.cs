@@ -154,7 +154,7 @@ public class Player : MonoBehaviour {
 		public int coins = 0;
 	}
 
-	void PlaySound(int clip)
+	public void PlaySound(int clip)
 	{
 		audio.clip = audioClip[clip];
 		audio.Play ();
