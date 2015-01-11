@@ -14,17 +14,17 @@ Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\Assembly-UnityScript.d
 Loading E:\GIT\MegaMario\zaidimas_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading E:\GIT\MegaMario\zaidimas_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.168 seconds
+- Completed reload, in  0.085 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 2.879433 ms
+UnloadTime: 3.057648 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 349.
-Total: 0.703996 ms (FindLiveObjects: 0.018194 ms CreateObjectMapping: 0.007464 ms MarkObjects: 0.123164 ms  DeleteObjects: 0.081176 ms)
+Total: 0.726389 ms (FindLiveObjects: 0.017728 ms CreateObjectMapping: 0.007931 ms MarkObjects: 0.127829 ms  DeleteObjects: 0.083042 ms)
 
 not null
  
@@ -68,26 +68,6 @@ Player found
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
 respawned
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-DEAD 1 _GM (GameMaster)
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-respawnPlayer
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-respawned
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-DEAD 1 _GM (GameMaster)
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-respawnPlayer
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
