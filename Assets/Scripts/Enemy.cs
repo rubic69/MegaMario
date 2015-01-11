@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 	Transform sightStart;
 	Transform sightEnd;
 	Transform weakness;
+	public GameObject projectile;
 	bool dead = false;
 	
 	bool colliding;
@@ -64,6 +65,8 @@ public class Enemy : MonoBehaviour {
 			float height= col.contacts[0].point.y - weakness.position.y;
 			if(height>0) {
 				dead = true;
+				Instantiate(projectile, transform.position,Quaternion.identity);
+				Instantiate(projectile, transform.position,Quaternion.identity);
 				Dies();
 				col.gameObject.rigidbody2D.AddForce(new Vector2(0,600));	
 			} else {
