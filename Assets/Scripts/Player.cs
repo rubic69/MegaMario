@@ -80,7 +80,8 @@ public class Player : MonoBehaviour {
 	public void damagePlayer(int damage) {
 		playerStats.health -= damage;
 		if (playerStats.health <= 0) {
-			GameMaster.killPlayer(this);
+			Application.LoadLevel(0);
+			//GameMaster.killPlayer(this);
 		}
 	}
 
