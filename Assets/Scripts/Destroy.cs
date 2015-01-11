@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Destroy : MonoBehaviour {
 
-	public bool byTime;
-	public bool byContact;
 	public float destroyTime;
 
 	// Use this for initialization
@@ -23,6 +21,7 @@ public class Destroy : MonoBehaviour {
 			Destroy (this.gameObject);
 			Player player = (Player) col.gameObject.GetComponent(typeof(Player));
 			player.increaseCoins();
+
 		}
 	}
 }

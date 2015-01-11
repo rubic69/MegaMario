@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	private float groundedRadius = .2f;			// Per koki atstuma nustato kur zeme
 	private bool grounded = false;				// Zaidejas ant zemes ar ne
 	private Transform ceilingCheck = null;				// Pozicija nustatanti kur zaidejas liecia lubas
-	private float ceilingRadius = .1f;			// Per koki atstuma nustato kur lubos
+	//private float ceilingRadius = .1f;			// Per koki atstuma nustato kur lubos
 	
 	private Animator anim;						// Kintamasis nustatyti animacijai
 	
@@ -30,6 +30,8 @@ public class Player : MonoBehaviour {
 	public PlayerStats playerStats = new PlayerStats();
 
 	public int fallBoundary = -20;
+
+	public AudioClip[] audioClip;
 
 	void Awake() {
 		// uzbindina
@@ -47,8 +49,9 @@ public class Player : MonoBehaviour {
 		// Read the inputs.
 		float h = Input.GetAxis("Horizontal");
 
-		if(Input.GetButton("Jump")) {
+		if(Input.GetKey(KeyCode.Space) && grounded) {
 			jump = true;
+			PlaySound(0);
 		}
 		// Pass all parameters to the character control script.
 		Move( h, jump);
@@ -137,6 +140,7 @@ public class Player : MonoBehaviour {
 
 	public void increaseCoins() {
 		playerStats.coins += 1;
+		PlaySound (1);
 	}
 
 	void OnGUI() {
@@ -149,4 +153,11 @@ public class Player : MonoBehaviour {
 		public int health = 100;
 		public int coins = 0;
 	}
+
+	void PlaySound(int clip)
+	{
+		audio.clip = audioClip[clip];
+		audio.Play ();
+	}
 }
+
