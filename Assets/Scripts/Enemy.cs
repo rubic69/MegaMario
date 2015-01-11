@@ -10,10 +10,11 @@ public class Enemy : MonoBehaviour {
 	bool dead = false;
 	
 	bool colliding;
-	
-	Animator anim;
+
 	
 	public LayerMask detectWhat;
+
+	Animator anim = null;
 
 
 	private bool facingRight = true;			// Nustatoma i kuria puse ziures
@@ -66,7 +67,7 @@ public class Enemy : MonoBehaviour {
 
 	void Dies() {
 		//anim.SetBool ("stomped", true);
-		Destroy (this.gameObject, 1f);
+		Destroy (this.gameObject);
 		//gameObject.tag = "neutralized";	
 	}
 

@@ -1,0 +1,93 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M       (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\GIT\MegaMario\zaidimas_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\GIT\MegaMario\zaidimas_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading E:\GIT\MegaMario\zaidimas_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\GIT\MegaMario\zaidimas_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.168 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\GIT\MegaMario\zaidimas_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 2.879433 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 349.
+Total: 0.703996 ms (FindLiveObjects: 0.018194 ms CreateObjectMapping: 0.007464 ms MarkObjects: 0.123164 ms  DeleteObjects: 0.081176 ms)
+
+not null
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Start
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+gm
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+IsolatedStorageException: Could not find a part of the path "E:\GIT\MegaMario\zaidimas_Data\Maps\level1.txt".
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllText (System.String path) [0x00000] in <filename unknown>:0 
+  at LoadMap.readFile (System.String file) [0x00000] in <filename unknown>:0 
+  at LoadMap.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+DEAD 1 _GM (GameMaster)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawnPlayer
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+null find
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Player found
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawned
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+DEAD 1 _GM (GameMaster)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawnPlayer
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawned
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+DEAD 1 _GM (GameMaster)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+respawnPlayer
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
