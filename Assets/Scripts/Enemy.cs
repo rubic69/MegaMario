@@ -65,12 +65,12 @@ public class Enemy : MonoBehaviour {
 			if(height>0) {
 				dead = true;
 				Dies();
-				col.gameObject.rigidbody2D.AddForce(new Vector2(0,500));	
+				col.gameObject.rigidbody2D.AddForce(new Vector2(0,600));	
 			} else {
 				dead = true;
 				Player player = (Player) col.gameObject.GetComponent(typeof(Player));
 				player.damagePlayer(40);
-				col.gameObject.rigidbody2D.AddForce(new Vector2(0,500));	
+				col.gameObject.rigidbody2D.AddForce(new Vector2(0,600));	
 				Dies();
 			}
 		}
