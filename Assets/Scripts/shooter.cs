@@ -9,12 +9,15 @@ public class shooter : MonoBehaviour {
 	public float speedFactor;
 	public float delay;
 	Transform weakness;
+
+	Animator anim = null;
 	
 
 	//public breakSound;
 
 
 	void Awake() {
+		anim = GetComponent<Animator>();
 		weakness = transform.Find("weakness");
 	}
 
@@ -24,8 +27,8 @@ public class shooter : MonoBehaviour {
 			float height= col.contacts[0].point.y - weakness.position.y;
 			if(height<0) {
 				GameObject clone = (GameObject)Instantiate(projectile, transform.position,Quaternion.identity);
-			//	PlaySound(0);
-				Destroy(this.gameObject);
+				anim.SetBool("Dead", true);
+				Destroy(this.gameObject, .2f);
 			}
 		}
 	}
